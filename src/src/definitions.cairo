@@ -48,12 +48,12 @@ pub impl u288Serde of Serde<u288> {
 }
 
 
-#[derive(Copy, Drop, Debug, PartialEq, Serde)]
+#[derive(Copy, Drop, Debug, PartialEq)]
 pub struct G1Point {
     pub x: u384,
     pub y: u384,
 }
-#[derive(Copy, Drop, Debug, PartialEq, Serde)]
+#[derive(Copy, Drop, Debug, PartialEq)]
 pub struct G2Point {
     pub x0: u384,
     pub x1: u384,
@@ -69,7 +69,7 @@ pub struct G2Line<T> {
     pub r1a1: T,
 }
 
-#[derive(Copy, Drop, Debug, PartialEq, Serde)]
+#[derive(Copy, Drop, Debug, PartialEq)]
 pub struct G1G2Pair {
     pub p: G1Point,
     pub q: G2Point,
@@ -572,7 +572,7 @@ impl E12DSerde288 of Serde<E12D<u288>> {
     }
 }
 
-#[derive(Copy, Drop, Debug, PartialEq, Serde)]
+#[derive(Copy, Drop, Debug, PartialEq)]
 pub struct MillerLoopResultScalingFactor<T> {
     pub w0: T,
     pub w2: T,
@@ -581,7 +581,7 @@ pub struct MillerLoopResultScalingFactor<T> {
     pub w8: T,
     pub w10: T,
 }
-#[derive(Copy, Drop, Debug, PartialEq, Serde)]
+#[derive(Copy, Drop, Debug, PartialEq)]
 pub struct E12DMulQuotient<T> {
     pub w0: T,
     pub w1: T,

@@ -208,7 +208,7 @@ fn derive_ec_point_from_X(
 // from the constant term.
 // No information about the degrees of the polynomials is stored here as they are derived
 // implicitely from the MSM size.
-#[derive(Drop, Debug, Copy, PartialEq, Serde)]
+#[derive(Drop, Debug, Copy, PartialEq)]
 pub struct FunctionFelt {
     pub a_num: Span<u384>,
     pub a_den: Span<u384>,
@@ -258,7 +258,7 @@ impl FunctionFeltImpl of FunctionFeltTrait {
     }
 }
 
-#[derive(Drop, Debug, PartialEq, Serde, Copy)]
+#[derive(Drop, Debug, PartialEq, Copy)]
 pub struct MSMHint {
     pub Q_low: G1Point,
     pub Q_high: G1Point,
@@ -266,13 +266,13 @@ pub struct MSMHint {
     pub RLCSumDlogDiv: FunctionFelt,
 }
 
-#[derive(Drop, Debug, PartialEq, Serde)]
+#[derive(Drop, Debug, PartialEq)]
 pub struct MSMHintSmallScalar {
     pub Q: G1Point,
     pub SumDlogDiv: FunctionFelt,
 }
 
-#[derive(Drop, Debug, PartialEq, Serde)]
+#[derive(Drop, Debug, PartialEq)]
 struct MSMHintBatched {
     Q_low: G1Point,
     Q_high: G1Point,
@@ -280,7 +280,7 @@ struct MSMHintBatched {
     SumDlogDivBatched: FunctionFelt,
 }
 
-#[derive(Drop, Debug, PartialEq, Serde, Copy)]
+#[derive(Drop, Debug, PartialEq, Copy)]
 pub struct DerivePointFromXHint {
     pub y_last_attempt: u384,
     pub g_rhs_sqrt: Span<u384>,
