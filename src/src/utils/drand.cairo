@@ -99,14 +99,14 @@ fn get_i_dst_prime_first_word(i: usize) -> u32 {
     return i.into() * 0x1000000 + 0x424c53;
 }
 
-#[derive(Drop, Serde)]
+#[derive(Drop)]
 struct MapToCurveHint {
     gx1_is_square: bool,
     y1: u384,
     y_flag: bool // true if y and u have same parity, false otherwise
 }
 
-#[derive(Drop, Serde)]
+#[derive(Drop)]
 struct HashToCurveHint {
     f0_hint: MapToCurveHint,
     f1_hint: MapToCurveHint,
